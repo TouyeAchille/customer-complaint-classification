@@ -1,0 +1,8 @@
+To classify the customer complaint based on the described image:
+
+### **Category:** Product Quality
+
+### **Subcategory:** Incorrect Design/Appearance  
+This classification is applicable if the complaint revolves around the jacket's design not matching customer expectations, such as differences in pocket style, stitching, or accents (e.g., collar, cuffs, zipper details).
+
+If the customer complaint entails a different issue, such as sizing, material problems, or defects, the subcategory might differ.
