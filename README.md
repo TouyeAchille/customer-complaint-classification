@@ -5,11 +5,11 @@ This project simulates a real-world application where AI is employed to streamli
 
 The solution takes audio complaints from customers and processes them through various stages to generate actionable insights. These stages include:
 
-- Audio Transcription: Converting spoken complaints into written text using a speech-to-text model.
-- Prompt Generation: Crafting a context-based prompt from the transcribed text to guide image generation.
-- Image Creation: Using generative AI to create visual representations of the complaints for better understanding.
-- Image Description: Analyzing the generated images to provide detailed descriptions of their contents.
-- Image Annotation: Highlighting key areas in the images to draw attention to the main issue reported.
+- **Audio Transcription**: Converting spoken complaints into written text using a speech-to-text model.
+- **Prompt Generation**: Crafting a context-based prompt from the transcribed text to guide image generation.
+- **Image Creation**: Using generative AI to create visual representations of the complaints for better understanding.
+- **Image Description**: Analyzing the generated images to provide detailed descriptions of their contents.
+- **Image Annotation**: Highlighting key areas in the images to draw attention to the main issue reported.
 
 Complaint Classification: Categorizing the complaint into predefined categories and subcategories using AI models.
 
