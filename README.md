@@ -17,4 +17,39 @@ This project use generative AI models, such as OpenAI's Whisper for transcriptio
 
 ![pipeline](pipeline.png)
 
-By the end of this project, you will have built a comprehensive AI solution capable of transforming audio complaints into detailed visual and textual insights, enhancing the efficiency of customer service operations. This project emphasizes practical AI implementation, giving you the tools to apply these techniques in real-world applications.
+
+## . File Structure
+
+Organize your project folder with the following structure:
+
+customer-complaint-classification
+├── LICENSE
+├── README.md
+├── conda.yaml
+├── pipeline.png
+└── src
+    ├── audio
+    │   └── complaint3.mp3
+    ├── dalle.py
+    ├── gpt.py
+    ├── main.py
+    ├── output
+    │   ├── classification.txt
+    │   ├── generated_image.png
+    │   ├── image_description.txt
+    │   └── transcription.txt
+    ├── utils.py
+    ├── vision.py
+    └── whisper.py
+
+
+## To run this project
+
+- You need to install miniconda/anacond`
+- Clone this project with the command git clone, then go to directory `customer-complaint-classification`
+- Create virtual enviroment : conda env create -f conda.yaml 
+- Activate virtual enviroment : conda activate venv
+- Set you environment variable in .env file 
+- then run project : python main.py
+
+hint: if you want you can put your audio file complaint in the folder audio, then python main.py
