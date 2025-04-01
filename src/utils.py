@@ -36,6 +36,22 @@ def annotation_image(image_path, annotations):
         # Draw the bounding box
         draw.rectangle([x0, y0, x1, y1], outline="red", width=2)
 
+        # Calculate text size and position
+        text_size = draw.textbbox((0, 0), label, font=font)  # Fix: Correct usage
+        text_width = text_size[2] - text_size[0]
+        text_height = text_size[3] - text_size[1]
+        text_position = (x0, y0 - text_height - 5)  # Adjust position above bbox
+        
+        # Draw text background rectangle
+        draw.rectangle(
+        [text_position, (text_position[0] + text_width, text_position[1] + text_height)],
+        fill="red"
+    )
+        # Draw the label text
+        
+        draw.text(text_position, label, fill="white", font=font)
+
+     
     return image 
 
 
