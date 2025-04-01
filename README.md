@@ -22,8 +22,7 @@ This project use generative AI models, such as OpenAI's Whisper for transcriptio
 
 Organize your project folder with the following structure:
 
-![file structure](file_structure.png)
-    ├
+![file structure](structure.png)
 
 ## To run this project
 
@@ -32,6 +31,7 @@ Organize your project folder with the following structure:
 - Create virtual enviroment : conda env create -f conda.yaml 
 - Activate virtual enviroment : conda activate venv
 - Set you environment variable in .env file 
+- then go to the folder src with command 'cd src'
 - then run project : python main.py
 
 hint: if you want you can put your audio file complaint in the folder audio, then python main.py
