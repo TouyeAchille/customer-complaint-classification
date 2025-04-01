@@ -24,10 +24,9 @@ def generate_image():
     )
 
     text_prompt = f"""{ transcribe_audio()}. Generate an image that visually represents this issue: 
-    a jacket that looks visibly small on the wearer, with tight sleeves and chest area. 
-    The person should appear slightly uncomfortable or frustrated, highlighting the incorrect fit. 
-    Optionally, include an online store page in the background with a sizing chart to emphasize the problem
-    """
+     a jacket that looks visibly small on the wearer, with tight sleeves and chest area. 
+     The person should appear slightly uncomfortable or frustrated, highlighting the incorrect fit. 
+     Optionally, include an online store page in the background with a sizing chart to emphasize the problem"""
 
     result = client.images.generate(
         model=os.getenv("AZURE_DEPLOYMENT_NAME_DALLE"),
