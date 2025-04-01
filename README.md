@@ -22,26 +22,8 @@ This project use generative AI models, such as OpenAI's Whisper for transcriptio
 
 Organize your project folder with the following structure:
 
-customer-complaint-classification
-├── LICENSE
-├── README.md
-├── conda.yaml
-├── pipeline.png
-└── src
-    ├── audio
-    │   └── complaint3.mp3
-    ├── dalle.py
-    ├── gpt.py
-    ├── main.py
-    ├── output
-    │   ├── classification.txt
-    │   ├── generated_image.png
-    │   ├── image_description.txt
-    │   └── transcription.txt
-    ├── utils.py
-    ├── vision.py
-    └── whisper.py
-
+![file structure](pipeline.png)
+    ├
 
 ## To run this project
 
