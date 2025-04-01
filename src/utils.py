@@ -24,7 +24,7 @@ def annotation_image(image_path, annotations):
 
     # Define the font and size
     try:
-        font = ImageFont.truetype("arial.ttf", size=15)
+        font = ImageFont.truetype("arial.ttf", size=18)
     except IOError:
         font = ImageFont.load_default()
 
