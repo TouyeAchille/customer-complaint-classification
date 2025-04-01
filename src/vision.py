@@ -1,7 +1,10 @@
-from utils import local_image_to_data_url
+from utils import local_image_to_data_url, save_annotation_image
 from openai import AzureOpenAI
+from PIL import ImageDraw, Image
+
 import dotenv
 import os
+import json
 
 dotenv.load_dotenv()
 
@@ -15,7 +18,7 @@ def describe_image():
     """
 
     # Load the generated image.
-    local_path_image="output/generated_image.png"
+    local_path_image=os.path.join("output","generated_image.png")
 
     data_url = local_image_to_data_url(local_path_image)
 
@@ -26,7 +29,18 @@ def describe_image():
         azure_endpoint=os.getenv("AZURE_OPENAI_ENDPOINT_GPT4V"),
     )
 
-    prompt="Provide a comprehensive and detailed description of the given image"
+    # Prompt for image description and bounding box annotations
+    prompt = """Provide a comprehensive and detailed description of the given image, 
+                and provide bounding_box and label around key elements of your description. 
+                The output format must be a valid JSON string, for example:
+
+                {
+                    "text": "Description of the image",
+                    "annotations": [
+                        {"label": "Quilted Texture", "coordinates": [140, 50, 630, 650]},
+                        {"label": "Left Sleeve Embroidery", "coordinates": [50, 90, 200, 650]}
+                    ]
+                }"""
 
     # Extract the description and return it.
     response = client.chat.completions.create(
@@ -44,16 +58,23 @@ def describe_image():
         max_tokens=1024,
     )
 
-    description=response.choices[0].message.content
+    json_string=response.choices[0].message.content
 
+    json_data = json.loads(json_string[8:-4])
+
+    description = json_data["text"]
+    annotations = json_data["annotations"]
+
+    # save description
     local_filename = os.path.join("output","image_description.txt")
-
     with open(local_filename, "w") as f:
         f.write(description)
-        
-    return description
+
+    save_annotation_image(local_path_image, annotations)
+
+    return description 
 
 
-#if __name__ == "__main__":
-    #description = describe_image()
-    #print(description)
+if __name__ == "__main__":
+    description = describe_image()
+    print(description)

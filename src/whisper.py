@@ -1,5 +1,6 @@
 # whisper.py
 import os
+import glob
 from openai import AzureOpenAI
 import dotenv
 
@@ -14,26 +15,25 @@ def transcribe_audio():
     str: The transcribed text of the audio file.
     """
     # Load the audio file.
-    audio_filepath="audio/complaint3.mp3"
+    audio_filepath = glob.glob(os.path.join("audio", "*.mp3"))[0]
     audio_file = open(audio_filepath, "rb") 
 
     # Call the Whisper model to transcribe the audio file.
     client = AzureOpenAI(
         api_key=os.getenv("AZURE_OPENAI_API_KEY"),  
-        api_version=os.getenv("AZURE_API_VERSION"),
-        azure_endpoint = os.getenv("AZURE_OPENAI_ENDPOINT")
+        api_version=os.getenv("AZURE_API_VERSION_WHISPER"),
+        azure_endpoint = os.getenv("AZURE_OPENAI_ENDPOINT_WHISPER")
     )
 
     # Extract the transcription and return it.
     transcription = client.audio.transcriptions.create(
         file=audio_file,
-        model=os.getenv("AZURE_DEPLOYMENT_NAME"),
+        model=os.getenv("AZURE_DEPLOYMENT_NAME_WHISPER"),
         response_format="text"
     )
 
     # Set the directory for the stored output
     output_dir = os.path.join(os.getcwd(), 'output')
-
     if not os.path.isdir(output_dir):
         os.mkdir(output_dir)
 

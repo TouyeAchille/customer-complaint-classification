@@ -2,9 +2,7 @@ from openai import AzureOpenAI
 from vision import describe_image
 import dotenv
 import os
-
-
-# Function to classify the customer complaint based on the image description
+import json
 
 
 def classify_with_gpt():
@@ -16,8 +14,13 @@ def classify_with_gpt():
     """
     # Create a prompt that includes the image description and other relevant details.
 
-    prompt = f"""Please provide classifies the customer complaint into a category/subcategory based on the image description.   
+    # Open the JSON file and load its content into the variable 'cat'
+    with open("categories.json", "r") as file:
+        cat = json.load(file)
+
+    prompt = f"""Please provide classifies the customer complaint into a category/subcategory based on the image description and predefined categories and subcategories.   
       image description : {describe_image()}
+      category/subcategory : {cat}
     
     """
     # Call the GPT model to classify the complaint based on the prompt.

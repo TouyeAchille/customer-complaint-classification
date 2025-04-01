@@ -1,8 +1,6 @@
-To classify the customer complaint based on the described image:
+Based on the image description and provided categories/subcategories, the appropriate classification would be:
 
-### **Category:** Product Quality
+**Category:** Fashion  
+**Subcategory:** Women's Clothing  
 
-### **Subcategory:** Incorrect Design/Appearance  
-This classification is applicable if the complaint revolves around the jacket's design not matching customer expectations, such as differences in pocket style, stitching, or accents (e.g., collar, cuffs, zipper details).
-
-If the customer complaint entails a different issue, such as sizing, material problems, or defects, the subcategory might differ.
+Reasoning: The image description involves a sleek and stylish women's jacket featuring intricate design elements such as material texture, decorative embellishments, cropped length, tailored fit, and functional aspects (zippered front opening). These details clearly align this product with the "Fashion" category and "Women's Clothing" subcategory.
