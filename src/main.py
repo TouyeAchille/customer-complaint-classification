@@ -34,8 +34,6 @@ def main():
     # Describe the generated image.
     _=describe_image()
 
-    # TODO: Annotate the reported issue in the image.
-
     # Classify the complaint based on the image description.
     classification = classify_with_gpt()
 

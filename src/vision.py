@@ -31,7 +31,7 @@ def describe_image():
 
     # Prompt for image description and bounding box annotations
     prompt = """Provide a comprehensive and detailed description of the given image, 
-                and provide bounding_box and label around key elements of your description. 
+                and provide bounding_box and label around any notable defect locations of image. the image size is 1024x1024
                 The output format must be a valid JSON string, for example:
 
                 {
