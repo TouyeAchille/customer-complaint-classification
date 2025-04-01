@@ -22,7 +22,7 @@ This project use generative AI models, such as OpenAI's Whisper for transcriptio
 
 Organize your project folder with the following structure:
 
-![file structure](pipeline.png)
+![file structure](file_structure.png)
     ├
 
 ## To run this project
